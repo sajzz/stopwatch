@@ -19,7 +19,7 @@ public class stopwacdesign extends javax.swing.JFrame {
      * Creates new form stopwacdesign
      */
     
-    
+    int once=0;
     static int hrs = 00;
     static int mins = 00;
     static int secs = 01;
@@ -135,10 +135,10 @@ public class stopwacdesign extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(hr, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -157,6 +157,7 @@ public class stopwacdesign extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        once++;
         cont = true;
         Thread t;
         t = new Thread()
@@ -164,7 +165,8 @@ public class stopwacdesign extends javax.swing.JFrame {
             @Override
             public void run()
             {
-                while(true)
+                if(once==1){
+                    while(true)
                 {
                     if(cont == true)
                     {
@@ -217,6 +219,7 @@ public class stopwacdesign extends javax.swing.JFrame {
                 
                     
                     
+                }
                 }
                 
                 
